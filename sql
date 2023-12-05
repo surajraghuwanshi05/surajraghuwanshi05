@@ -25,6 +25,11 @@ GROUP BY make, model
 ORDER BY MAX_dailyRate DESC
 LIMIT 1;
 -- 9. Retrieve all cars leased by a specific customer.
+SELECT c.make, c.model, 
+FROM vehcle as c
+INNER JOIN Lease as L ON c.carID = L.carID
+INNER JOIN Customer as b ON b.customerID = L.customerID
+WHERE firstName = 'xyz'
 
 
 
@@ -40,6 +45,9 @@ WHERE EXTRACT( YEAR FROM paymentDate) = 2023
 
 -- 13. Retrieve Car Details and Their Total Payments.
 -- 14. Calculate Total Payments for Each Customer.
+
+
+
 -- 15. List Car Details for Each Lease.
 -- 16. Retrieve Details of Active Leases with Customer and Car Information.
 -- 17. Find the Customer Who Has Spent the Most on Leases.
