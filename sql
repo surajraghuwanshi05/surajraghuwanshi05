@@ -23,14 +23,21 @@ SELECT  make, model, max(dailyRate) AS  MAX_dailyRate
 FROM Vehicle
 GROUP BY make, model
 ORDER BY MAX_dailyRate DESC
+LIMIT 1;
 -- 9. Retrieve all cars leased by a specific customer.
 
 
 
 -- 10. Find the details of the most recent lease.
+SELECT leaseID, carID, customerID, MAX(startDate), endDate leaseType
+FROM 
 
 -- 11. List all payments made in the year 2023.
+SElECT amount, paymentDate
+FROM payment
+WHERE EXTRACT( YEAR FROM paymentDate) = 2023
 -- 12. Retrieve customers who have not made any payments.
+
 -- 13. Retrieve Car Details and Their Total Payments.
 -- 14. Calculate Total Payments for Each Customer.
 -- 15. List Car Details for Each Lease.
